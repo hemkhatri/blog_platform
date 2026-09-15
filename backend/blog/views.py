@@ -6,7 +6,7 @@ from .pagination import CustomPageNumberPagination
 
 class PostListView(generics.ListAPIView):
     # queryset = Post.published.all()
-    queryset = Post.objects.filter(status = Post.Status.DRAFT)
+    queryset = Post.objects.filter(status = Post.Status.PUBLISHED)
     serializer_class = PostSerializer
     pagination_class = CustomPageNumberPagination
 
