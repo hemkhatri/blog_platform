@@ -4,7 +4,7 @@ from .serializers import PostSerializer
 from rest_framework.generics import get_object_or_404
 from .pagination import CustomPageNumberPagination
 
-class PostListView(generics.ListAPIView):
+class PostListView(generics.ListCreateAPIView):
     # queryset = Post.published.all()
     queryset = Post.objects.filter(status = Post.Status.PUBLISHED)
     serializer_class = PostSerializer
